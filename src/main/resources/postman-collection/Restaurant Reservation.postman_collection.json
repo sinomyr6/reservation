@@ -1,0 +1,179 @@
+{
+  "info": {
+    "_postman_id": "9ebd5c0c-2943-49c0-a829-e1848aa48277",
+    "name": "Restaurant Reservation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51571641",
+    "_collection_link": "https://go.postman.co/collection/51571641-9ebd5c0c-2943-49c0-a829-e1848aa48277?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Test Firstname\",\r\n  \"lastName\": \"TestLastname\",\r\n  \"email\": \"test@gmail.com\",\r\n  \"phoneNumber\": \"+639123456789\",\r\n  \"numberOfGuests\": 10,\r\n  \"reservationDate\": \"2026-11-03T02:55:58.136866500\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/reservations",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Reservation",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"reservationDate\": \"2026-11-03T02:53:25.101487400\",\r\n  \"numberOfGuests\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/reservations/RSVb80e2f2d73d84b27addf31e0dc30c4eb",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "RSVb80e2f2d73d84b27addf31e0dc30c4eb"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all upcoming reservations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/reservations/upcoming?email=test@gmail.com",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "upcoming"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "test@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancel Reservation",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/reservations/RSVb80e2f2d73d84b27addf31e0dc30c4eb/cancellation",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "RSVb80e2f2d73d84b27addf31e0dc30c4eb",
+            "cancellation"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirm Reservation[ADMIN CONTROL]",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/reservations/RSV86d328e4471a4eb9b88db75d7f7b33ca/confirmation",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "RSV86d328e4471a4eb9b88db75d7f7b33ca",
+            "confirmation"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Start reservation",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/reservations/RSV1793204289105/start",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "RSV1793204289105",
+            "start"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Complete the reservation[ADMIN CONTROL]",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/reservations/RSV1793204289105/completion",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reservations",
+            "RSV1793204289105",
+            "completion"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
